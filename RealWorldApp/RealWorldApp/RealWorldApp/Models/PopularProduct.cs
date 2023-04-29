@@ -11,6 +11,6 @@ namespace RealWorldApp.Models
         public double price { get; set; }
         public string imageUrl { get; set; }
 
-        public string FullImageUrl => AppSettings.ApiUrl + imageUrl;
+        public string FullImageUrl => AppSettings.ApiUrl + "/uploads/" + imageUrl;
     }
 }

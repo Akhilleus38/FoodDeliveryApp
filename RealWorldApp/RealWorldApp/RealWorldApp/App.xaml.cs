@@ -12,6 +12,7 @@ namespace RealWorldApp
         {
             InitializeComponent();
 
+            // MainPage = new NavigationPage(new SignupPage());
             var accesstoken = Preferences.Get("accessToken", string.Empty);
             if (string.IsNullOrEmpty(accesstoken))
             {

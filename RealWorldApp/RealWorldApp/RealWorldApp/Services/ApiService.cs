@@ -49,7 +49,7 @@ namespace RealWorldApp.Services
             Preferences.Set("userName", result.user_name);
             Preferences.Set("tokenExpirationTime", result.expiration_Time);
             Preferences.Set("currentTime", UnixTime.GetCurrentTime());
-            return true;
+                return true;
         }
 
         public static async Task<List<Category>> GetCategories()
@@ -138,7 +138,7 @@ namespace RealWorldApp.Services
         }
 
         public static async Task<OrderResponse> PlaceOrder(Order order)
-        {
+            {
             await TokenValidator.CheckTokenValidity();
             var httpClient = new HttpClient();
             var json = JsonConvert.SerializeObject(order);

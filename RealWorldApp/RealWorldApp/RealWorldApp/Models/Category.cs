@@ -10,7 +10,7 @@ namespace RealWorldApp.Models
         public string name { get; set; }
         public string imageUrl { get; set; }
 
-        public string FullImageUrl => AppSettings.ApiUrl + imageUrl;
+        public string FullImageUrl => AppSettings.ApiUrl + "/uploads/" + imageUrl;
 
     }
 }

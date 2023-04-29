@@ -38,7 +38,7 @@ namespace RealWorldApp.Pages
             var i = Convert.ToInt16(LblQty.Text);
             i++;
             LblQty.Text = i.ToString();
-            LblTotalPrice.Text = (Convert.ToInt16(LblQty.Text) * Convert.ToInt16(LblPrice.Text)).ToString();
+            LblTotalPrice.Text = (Convert.ToInt16(LblQty.Text) * Convert.ToDouble(LblPrice.Text)).ToString();
 
         }
 
@@ -51,7 +51,7 @@ namespace RealWorldApp.Pages
                 return;
             }
             LblQty.Text = i.ToString();
-            LblTotalPrice.Text = (Convert.ToInt16(LblQty.Text) * Convert.ToInt16(LblPrice.Text)).ToString();
+            LblTotalPrice.Text = (Convert.ToInt16(LblQty.Text) * Convert.ToDouble(LblPrice.Text)).ToString();
         }
 
         private void TapBack_Tapped(object sender, EventArgs e)
@@ -63,8 +63,8 @@ namespace RealWorldApp.Pages
         {
             var addToCart = new AddToCart();
             addToCart.Qty = LblQty.Text;
-            addToCart.Price = LblPrice.Text;
-            addToCart.TotalAmount = LblTotalPrice.Text;
+           //addToCart.Price = Convert.ToDecimal(LblPrice.Text);
+            //addToCart.TotalAmount = LblTotalPrice.Text;
             addToCart.ProductId = _productId;
             addToCart.CustomerId = Preferences.Get("userId", 0);
 
